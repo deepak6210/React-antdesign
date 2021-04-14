@@ -11,6 +11,39 @@ import { Row, Col } from 'antd';
 import { Card } from 'antd';
 const { Meta } = Card;
 
+const items = [
+  {
+    key: '1',
+    data: 'Modern Design',
+    img: image1,
+  },
+  {
+    key: '2',
+    data: 'Clean and Elegant',
+    img: image2,
+  },
+  {
+    key: '3',
+    data: 'Great Support',
+    img: image3,
+  },
+  {
+    key: '4',
+    data: 'Easy to customise',
+    img: image4,
+  },
+  {
+    key: '5',
+    data: 'Unlimited Features',
+    img: image5,
+  },
+  {
+    key: '6',
+    data: 'Advanced Options',
+    img: image6,
+  },
+]
+
 function AppFeature() {
   return (
     <div id="feature" className="block featureBlock bgGray">
@@ -20,54 +53,20 @@ function AppFeature() {
           <p>Obcaecati consequatur libero repudiandae, aperiam itaque laborum!</p>
         </div>
         <Row gutter={[16, 16]}>
-          <Col xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 8 }}>
-            <Card
-              hoverable
-              cover={<img alt="Modern Design" src={image1} />}
-            >
-              <Meta title="Modern Design" />
-            </Card>
-          </Col>
-          <Col xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 8 }}>
-            <Card
-              hoverable
-              cover={<img alt="Test" src={image2} />}
-            >
-              <Meta title="Clean and Elegant" />
-            </Card>
-          </Col>
-          <Col xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 8 }}>
-            <Card
-              hoverable
-              cover={<img alt="Test" src={image3} />}
-            >
-              <Meta title="Great Support" />
-            </Card>
-          </Col>
-          <Col xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 8 }}>
-            <Card
-              hoverable
-              cover={<img alt="Test" src={image4} />}
-            >
-              <Meta title="Easy to customise" />
-            </Card>
-          </Col>
-          <Col xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 8 }}>
-            <Card
-              hoverable
-              cover={<img alt="Test" src={image5} />}
-            >
-              <Meta title="Unlimited Features" />
-            </Card>
-          </Col>
-          <Col xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 8 }}>
-            <Card
-              hoverable
-              cover={<img alt="Test" src={image6} />}
-            >
-              <Meta title="Advanced Options" />
-            </Card>
-          </Col>
+          {items.map(item => {
+            return (
+              <Col xs={{ span: 24 }} sm={{ span: 12 }} md={{ span: 8 }} key={item.key}>
+                <div className="content title">
+                  <Card
+                    hoverable
+                    cover={<img alt={item.data} src={item.img} />}
+                  >
+                    <Meta title={item.data} />
+                  </Card>
+                </div>
+              </Col>
+            );
+          })}
         </Row>
       </div>
     </div>

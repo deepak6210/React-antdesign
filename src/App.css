@@ -198,10 +198,7 @@ header
   opacity: 1;
 }
 
-/* 
-hero
----- 
-*/
+/* hero---- */
 .heroBlock {
   background: url('assets/images/bg-hero.jpg') no-repeat;
   background-position: 50% 100%;
